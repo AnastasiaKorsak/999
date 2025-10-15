@@ -11,10 +11,6 @@ namespace ExpressionCalculator
         private TextBox textBoxZ;
         private TextBox textBoxResult;
         private Button buttonCalculate;
-        private Label labelX;
-        private Label labelY;
-        private Label labelZ;
-        private Label labelResult;
 
         public MainForm()
         {
@@ -25,12 +21,13 @@ namespace ExpressionCalculator
         {
             // Настройка формы
             this.Text = "Калькулятор выражения";
-            this.Size = new Size(400, 300);
+            this.ClientSize = new Size(350, 250);
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.Padding = new Padding(20);
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
 
             // Создание и настройка элементов управления
-            labelX = new Label
+            Label labelX = new Label
             {
                 Text = "X:",
                 Location = new Point(20, 20),
@@ -44,7 +41,7 @@ namespace ExpressionCalculator
                 Text = "-4.5"
             };
 
-            labelY = new Label
+            Label labelY = new Label
             {
                 Text = "Y:",
                 Location = new Point(20, 60),
@@ -55,10 +52,10 @@ namespace ExpressionCalculator
             {
                 Location = new Point(120, 60),
                 Size = new Size(200, 20),
-                Text = "0.75e-4"
+                Text = "0.000075"
             };
 
-            labelZ = new Label
+            Label labelZ = new Label
             {
                 Text = "Z:",
                 Location = new Point(20, 100),
@@ -69,10 +66,10 @@ namespace ExpressionCalculator
             {
                 Location = new Point(120, 100),
                 Size = new Size(200, 20),
-                Text = "0.845e2"
+                Text = "84.5"
             };
 
-            labelResult = new Label
+            Label labelResult = new Label
             {
                 Text = "Результат u:",
                 Location = new Point(20, 140),
@@ -161,7 +158,7 @@ namespace ExpressionCalculator
         }
 
         [STAThread]
-        static void Main()
+        public static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
